@@ -55,8 +55,8 @@ function ContactPage() {
             <p className="mt-2 text-muted-foreground">Our doors and inboxes are always open.</p>
             <ul className="mt-8 space-y-5 text-sm">
               {[
-                { I: MapPin, t: "Address", d: "12, Bodhi Marg, Nagpur, Maharashtra 440010" },
-                { I: Phone, t: "Phone", d: "+91 98765 43210" },
+                { I: MapPin, t: "Address", d: "#4-6-01(Shop No-2) Shashi Mahal Talkies Road, Manglwar Pet. Near Reddy floar mill Raichur-584101" },
+                { I: Phone, t: "Phone", d: "+91 70194 28321,+91 99866 22479,+91 99457 99308,+91 94480 25091" },
                 { I: Mail, t: "Email", d: "connect@devanampriya.org" },
               ].map(({ I, t, d }) => (
                 <li key={t} className="flex gap-4">
@@ -71,9 +71,11 @@ function ContactPage() {
             <div className="mt-8 overflow-hidden rounded-2xl border border-border">
               <iframe
                 title="Map"
-                src="https://www.openstreetmap.org/export/embed.html?bbox=79.05%2C21.10%2C79.15%2C21.18&layer=mapnik"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3831.393822897374!2d77.35608907301545!3d16.200181035923162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc9d79e2bbfec67%3A0xe98289439bbd2a80!2sShashi%20Mahal%20Talkies%20Rd%2C%20Raichur%2C%20Karnataka%20584101!5e0!3m2!1sen!2sin!4v1782150917837!5m2!1sen!2sin"
                 className="h-64 w-full"
                 loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
               />
             </div>
           </Reveal>

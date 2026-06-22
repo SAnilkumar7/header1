@@ -578,11 +578,11 @@ function Footer() {
           <ul className="mt-4 space-y-3 text-sm">
             <li className="flex gap-3">
               <MapPin className="h-4 w-4 shrink-0 text-[var(--gold)]" /> 
-              12, Bodhi Marg, Nagpur, Maharashtra, India
+              #4-6-01(Shop No-2) Shashi Mahal Talkies Road, Manglwar Pet. Near Reddy floar mill Raichur-584101
             </li>
             <li className="flex gap-3">
               <Phone className="h-4 w-4 shrink-0 text-[var(--gold)]" /> 
-              +91 98765 43210
+              +91 70194 28321
             </li>
             <li className="flex gap-3">
               <Mail className="h-4 w-4 shrink-0 text-[var(--gold)]" /> 

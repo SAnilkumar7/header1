@@ -190,13 +190,15 @@ import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 import community from "../assets/social.jpg";
+import Religious from "../assets/Religious.jpg";
 import education from "../assets/youth.jpg";
-import stupa from "../assets/hero-stupa.jpg";
-import ashoka from "../assets/hero-ashoka.jpg";
+import education1 from "../assets/industdevelopments.jpg";
+import Event1 from "../assets/Event1.jpg";
+import Event from "../assets/Event.jpg";
 import buddha from "../assets/program.jpg";
-import aboutBuddha from "../assets/about-buddha.jpg";
-import aboutAshoka from "../assets/about-ashoka.jpg";
-import aboutAmbedkar from "../assets/about-ambedkar.jpg";
+import buddha1 from "../assets/program1.jpg";
+import aboutBuddha from "../assets/monk.jpg";
+import welfare from "../assets/welfare.jpg";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
@@ -218,16 +220,15 @@ type Cat = typeof CATS[number];
 const ITEMS: { img: string; cat: Exclude<Cat, "All">; title: string }[] = [
   { img: community, cat: "Community", title: "Community Kitchen" },
   { img: education, cat: "Education", title: "Rural Classroom" },
-  { img: stupa, cat: "Buddhist Programs", title: "Heritage Walk — Sanchi" },
-  { img: ashoka, cat: "Events", title: "Ashoka Day" },
+  { img: buddha1, cat: "Buddhist Programs", title: "Heritage Walk — Sanchi" },
+  { img: Event, cat: "Events", title: "Ashoka Day" },
   { img: buddha, cat: "Buddhist Programs", title: "Meditation Retreat" },
   { img: aboutBuddha, cat: "Buddhist Programs", title: "Dhamma Talk" },
-  { img: aboutAshoka, cat: "Events", title: "Annual Convention" },
-  { img: aboutAmbedkar, cat: "Welfare", title: "Constitution Day" },
+  { img: welfare, cat: "Welfare", title: "Constitution Day" },
   { img: community, cat: "Welfare", title: "Health Camp" },
-  { img: education, cat: "Education", title: "Scholarship Day" },
-  { img: stupa, cat: "Events", title: "Vesak Celebration" },
-  { img: ashoka, cat: "Community", title: "Village Outreach" },
+  { img: education1, cat: "Education", title: "Scholarship Day" },
+  { img: Event1, cat: "Events", title: "Vesak Celebration" },
+  { img: Religious, cat: "Community", title: "Village Outreach" },
 ];
 
 function GalleryPage() {

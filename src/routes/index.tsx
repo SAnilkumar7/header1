@@ -238,33 +238,7 @@ function Home() {
       </section>
 
       {/* GALLERY */}
-      {/* GALLERY - Natural sizes (wide, tall, square all preserved) */}
-<section className="bg-secondary/40 py-24 md:py-32">
-  <div className="container-page">
-    <Reveal><SectionHeading eyebrow="Glimpses" title="Moments of compassion, captured in light." subtitle="A visual journal of our service, our people and the communities we walk beside." /></Reveal>
-    
-    {/* ✅ Removed all aspect-ratio constraints - images show in their natural size */}
-    <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-3">
-      {GALLERY.map((g, i) => (
-        <Reveal key={i} delay={i * 0.05}>
-          <div className="group relative overflow-hidden rounded-2xl">
-            <img 
-              src={g.img} 
-              alt="" 
-              loading="lazy" 
-              className="w-full transition duration-700 group-hover:scale-105" 
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[var(--royal-deep)]/80 via-transparent to-transparent opacity-0 transition group-hover:opacity-100" />
-          </div>
-        </Reveal>
-      ))}
-    </div>
-    
-    <div className="mt-10 text-center">
-      <Link to="/gallery" className="btn-primary"><ArrowRight className="h-4 w-4" /> Explore Full Gallery</Link>
-    </div>
-  </div>
-</section>
+      
       {/* <section className="bg-secondary/40 py-24 md:py-32">
         <div className="container-page">
           <Reveal><SectionHeading eyebrow="Glimpses" title="Moments of compassion, captured in light." subtitle="A visual journal of our service, our people and the communities we walk beside." /></Reveal>

@@ -2,19 +2,20 @@ import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Heart, Landmark, Copy, CheckCircle2 } from "lucide-react";
-import QRCode from "react-qr-code";
+import qrCodeImage from "../assets/qrcode.png"; // Adjust path as needed
+
 
 const UPI_ID =
-  (import.meta.env.VITE_UPI_ID as string | undefined) ?? "devanampriya@upi";
+  (import.meta.env.VITE_UPI_ID as string | undefined) ?? "7019428321@sbi";
 const UPI_PAYEE =
   (import.meta.env.VITE_UPI_PAYEE as string | undefined) ?? "DEVANAMPRIYA";
 
 const BANK_DETAILS = {
-  accountName: "DEVANAMPRIYA TRUST",
-  accountNumber: "12345678901234",
-  ifsc: "HDFC0001234",
-  bankName: "HDFC Bank",
-  branch: "Nagpur, Maharashtra",
+  accountName: "DEVANAMPRIYA SAMRAT ASHOK BUDDA VIHAR TRUST (R) RAICHUR",
+  accountNumber: "42908869183",
+  ifsc: "SBIN0020203",
+  bankName: "State Bank of India",
+  branch: "Raichur Main, M.G. Road, Loharwadi, Raichur - 584101",
 } as const;
 
 export const Route = createFileRoute("/donate")({
@@ -38,12 +39,6 @@ export const Route = createFileRoute("/donate")({
 
 function DonatePage() {
   const [copied, setCopied] = useState<string | null>(null);
-
-  const upiUrl = `upi://pay?pa=${encodeURIComponent(UPI_ID)}&pn=${encodeURIComponent(
-    UPI_PAYEE,
-  )}&cu=INR&tn=${encodeURIComponent(
-    "Donation to DEVANAMPRIYA",
-  )}`;
 
   const copyToClipboard = (text: string, label: string) => {
     if (typeof navigator !== "undefined" && navigator.clipboard) {
@@ -85,7 +80,7 @@ function DonatePage() {
             <Heart className="h-4 w-4" /> Make a Donation
           </div>
 
-          {/* QR Code + UPI */}
+          {/* QR Code Image */}
           <div className="mt-8 rounded-2xl border border-slate-200 bg-slate-50 p-5 md:p-7">
             <h3 className="text-lg font-semibold text-[var(--royal-deep)]">Scan & Pay via UPI</h3>
             <p className="mt-1 text-sm text-slate-500">
@@ -93,9 +88,13 @@ function DonatePage() {
             </p>
 
             <div className="mt-5 flex flex-col items-center gap-5 sm:flex-row sm:items-start">
-              <div className="rounded-xl border border-slate-200 bg-white p-3 shadow-sm">
-                <QRCode value={upiUrl} size={180} level="H" />
-              </div>
+              <div className="w-full max-w-[200px] aspect-square overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+                <img
+                  src={qrCodeImage}
+                  alt="UPI QR Code"
+                  className="w-full h-full object-cover"
+                />
+                              </div>
               <div className="flex-1 space-y-3">
                 <div className="flex items-center justify-between rounded-xl bg-white p-3 text-sm text-slate-600">
                   <div>
