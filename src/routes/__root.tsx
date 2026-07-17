@@ -851,11 +851,68 @@ function Footer() {
       </div>
       
       <div className="border-t border-white/10">
-        <div className="container-page flex flex-col items-center justify-between gap-3 py-6 text-xs text-white/55 sm:flex-row">
-          <p>© {new Date().getFullYear()} DEVANAMPRIYA. All rights reserved.</p>
-          <p>Sabbe satta sukhi hontu — May all beings be happy.</p>
+    <div className="container-page flex flex-col items-center gap-4 py-6 text-xs text-white/55">
+
+      {/* Center Content */}
+      <div className="flex flex-col items-center gap-3 text-center">
+
+        {/* DEVANAMPRIYA Name */}
+        <p className="font-semibold text-white/70">
+          DEVANAMPRIYA
+        </p>
+
+        {/* Copyright */}
+        <p>
+          © {new Date().getFullYear()} DEVANAMPRIYA. All rights reserved.
+        </p>
+
+        {/* Crafted by */}
+        <p>
+          Crafted by{" "}
+          <span className="font-semibold text-[var(--gold)]">
+            S Anil Kumar
+          </span>
+        </p>
+
+        {/* Social Icons */}
+        <div className="flex items-center gap-3">
+          {/* WhatsApp */}
+          <a
+            href="https://wa.me/918123193971"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="grid h-8 w-8 place-items-center rounded-full border border-white/15 transition hover:border-[#25D366] hover:bg-[#25D366] hover:text-white"
+          >
+            <svg viewBox="0 0 24 24" className="h-4 w-4 fill-current">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .157 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.892-5.335 11.892-11.893 0-3.175-1.235-6.159-3.478-8.407"/>
+            </svg>
+          </a>
+
+          {/* Call */}
+          <a
+            href="tel:+918123193971"
+            className="grid h-8 w-8 place-items-center rounded-full border border-white/15 transition hover:border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--royal-deep)]"
+          >
+            <Phone className="h-4 w-4" />
+          </a>
+
+          {/* LinkedIn */}
+          <a
+            href="https://www.linkedin.com/in/s-anil-kumar-46b71a2b2/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="grid h-8 w-8 place-items-center rounded-full border border-white/15 transition hover:border-[#0A66C2] hover:bg-[#0A66C2] hover:text-white"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4">
+              <path d="M4.98 3.5C4.98 4.6 4.1 5.5 3 5.5S1.02 4.6 1.02 3.5 1.9 1.5 3 1.5s1.98.9 1.98 2zM1.5 8h3V22h-3V8zm7 0h2.88v1.91h.04c.4-.76 1.38-1.56 2.84-1.56C17.5 8.35 19 10 19 13.02V22h-3v-7.02c0-1.67-.03-3.82-2.33-3.82-2.34 0-2.7 1.82-2.7 3.7V22h-3V8z"/>
+            </svg>
+          </a>
         </div>
+
       </div>
+
+    </div>
+  </div>
     </footer>
   );
 }
