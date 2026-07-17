@@ -29,10 +29,10 @@ export function HeroSlider() {
             <span className="text-gradient-gold">HUMANITY IS THE GOAL</span>
           </h1>
           <p className="mt-5 text-base leading-relaxed text-white/90 md:text-lg">
-            Building a Better Society Through Equality, Compassion, and Justice.
+            "Welcome to Devanampriya Samrat Ashok Buddha Vihar Trust"
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Link to="/about" className="btn-primary"><ArrowRight className="h-4 w-4" /> Learn More</Link>
+            <Link to="/about" className="btn-primary"><ArrowRight className="h-4 w-4" /> Know More</Link>
             <Link to="/contact" className="btn-outline"><Users className="h-4 w-4" /> Join Us</Link>
             <Link to="/donate" className="btn-outline"><HandHeart className="h-4 w-4" /> Donate Now</Link>
           </div>
