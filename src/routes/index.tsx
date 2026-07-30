@@ -173,12 +173,12 @@ function Home() {
           <div className="mx-auto grid max-w-2xl grid-cols-2 gap-6 sm:gap-10">
             {[
               {
-                name: "Shri Shanmukha",
+                name: "Ayushman Shanmukha",
                 role: "Founder",
                 desc: "A visionary leader and social reformer, established the organisation to promote Dhamma and social justice.",
               },
               {
-                name: "Shri Vijay Prasad.P",
+                name: "Ayushman Vijay Prasad.P",
                 role: "Head & Creative Director",
                 desc: "Guides the organisation's vision and initiatives, ensuring alignment with the principles of Dhamma and compassion.",
               },

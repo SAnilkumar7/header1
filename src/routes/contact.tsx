@@ -94,7 +94,7 @@ function ContactPage() {
                   <select name="intent" className="mt-2 w-full rounded-lg border border-border bg-background px-4 py-3 text-sm focus:border-[var(--gold)] focus:outline-none">
                     <option>Volunteer with a programme</option>
                     <option>Make a donation</option>
-                    <option>Partner with Devanampriya</option>
+                    <option>Member with Devanampriya</option>
                     <option>Just say hello</option>
                   </select>
                 </div>
