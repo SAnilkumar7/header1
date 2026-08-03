@@ -368,7 +368,7 @@ function Footer() {
             </li>
             <li className="flex gap-3">
               <Mail className="h-4 w-4 shrink-0 text-[var(--gold)]" /> 
-              connect@devanampriya.com
+              123@devanampriya.com
             </li>
           </ul>
         </div>

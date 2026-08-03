@@ -89,7 +89,7 @@ const GALLERY = [
 const TESTIMONIALS = [
   { name: "Shanmukha", role: "Community Leader", text: "Their welfare work has rebuilt trust in our village. The dignity they restore is greater than any donation could measure." },
   { name: "Vijay Prasad.P", role: "Creative Director", text: "Walking with this team taught me what real service means. We don't just help - we listen, learn, and grow together." },
-  { name: "Meera Joshi", role: "Teacher, Raichur", text: "Devanampriya's education programme gave my students new wings. The values of compassion and equality run through every lesson." },
+  { name: "Meera", role: "Teacher, Raichur", text: "Devanampriya's education programme gave my students new wings. The values of compassion and equality run through every lesson." },
 
 ];
 
