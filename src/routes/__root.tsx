@@ -638,9 +638,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" },
-      // ===== ADD THIS FAVICON LINK =====
       { rel: "icon", href: "/favicon.ico" },
-      // Optional: Add multiple formats for better compatibility
       { rel: "apple-touch-icon", href: "/favicon.ico" },
     ],
   }),
@@ -652,11 +650,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" style={{ height: "100%" }}>
       <head>
         <HeadContent />
       </head>
-      <body>
+      <body style={{ height: "100%", margin: 0, padding: 0, display: "flex", flexDirection: "column" }}>
         {children}
         <Scripts />
       </body>
@@ -716,7 +714,6 @@ function FloatingHeart({ delay, xOffset }: { delay: number; xOffset: number }) {
 function PulseHandHeart({ className }: { className?: string }) {
   return (
     <span className="relative inline-flex items-center justify-center">
-      {/* Main heart icon with heartbeat pulse */}
       <motion.span
         animate={{ scale: [1, 1.25, 1] }}
         transition={{
@@ -729,8 +726,6 @@ function PulseHandHeart({ className }: { className?: string }) {
       >
         <HandHeart className={className} />
       </motion.span>
-
-      {/* Floating hearts rising up and fading */}
       <FloatingHeart delay={0} xOffset={-4} />
       <FloatingHeart delay={1.6} xOffset={3} />
       <FloatingHeart delay={3.2} xOffset={-2} />
@@ -838,7 +833,7 @@ function Footer() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (email.trim()) {
       setSubmitted(true);
@@ -850,8 +845,8 @@ function Footer() {
   };
 
   return (
-    <footer className="bg-[var(--royal-deep)] text-white/80">
-      <div className="container-page grid gap-10 py-16 md:grid-cols-2 lg:grid-cols-4">
+    <footer className="bg-[var(--royal-deep)] text-white/80" style={{ flexShrink: 0, width: "100%" }}>
+      <div className="container-page grid gap-10 py-16 md:grid-cols-2 lg:grid-cols-4" style={{ maxWidth: "100%", overflow: "hidden" }}>
         <div>
           <div className="flex items-center gap-3">
             <img src={logo} alt="" className="h-14 w-auto object-contain" />
@@ -890,7 +885,7 @@ function Footer() {
           <ul className="mt-4 space-y-3 text-sm">
             <li className="flex gap-3">
               <MapPin className="h-4 w-4 shrink-0 text-[var(--gold)]" /> 
-              #4-6-01(Shop No-2) Shashi Mahal Talkies Road, Manglwar Pet. Near Reddy floar mill Raichur-584101
+              <span className="break-words">#4-6-01(Shop No-2) Shashi Mahal Talkies Road, Manglwar Pet. Near Reddy floar mill Raichur-584101</span>
             </li>
             <li className="flex gap-3">
               <Phone className="h-4 w-4 shrink-0 text-[var(--gold)]" /> 
@@ -903,10 +898,14 @@ function Footer() {
           </ul>
         </div>
         
-        <div>
+        <div style={{ minWidth: 0, overflow: "hidden" }}>
           <h4 className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--gold)]">Join Our Circle</h4>
           <p className="mt-4 text-sm">Receive monthly stories of compassion and impact.</p>
-          <form className="mt-4 flex overflow-hidden rounded-full border border-white/15 bg-white/5" onSubmit={handleSubmit}>
+          <form 
+            className="mt-4 flex w-full overflow-hidden rounded-full border border-white/15 bg-white/5" 
+            onSubmit={handleSubmit}
+            style={{ maxWidth: "100%" }}
+          >
             <input 
               type="email" 
               required 
@@ -915,15 +914,17 @@ function Footer() {
               onChange={(e) => setEmail(e.target.value)}
               className="min-w-0 flex-1 bg-transparent px-4 py-2.5 text-sm text-white placeholder:text-white/40 focus:outline-none" 
               disabled={submitted}
+              style={{ minWidth: 0, width: "100%" }}
             />
             <button 
               type="submit"
               disabled={submitted}
-              className="bg-[var(--gold)] px-4 text-sm font-semibold text-[var(--royal-deep)] transition-all duration-300 hover:brightness-105 flex items-center gap-2 whitespace-nowrap"
+              className="bg-[var(--gold)] px-3 py-2.5 text-sm font-semibold text-[var(--royal-deep)] transition-all duration-300 hover:brightness-105 flex items-center justify-center gap-1 whitespace-nowrap flex-shrink-0"
             >
               {submitted ? (
                 <>
-                  <CheckCircle className="h-4 w-4" /> Thank You
+                  <CheckCircle className="h-3.5 w-3.5" /> 
+                  <span className="text-xs">Thanks!</span>
                 </>
               ) : (
                 "Join"
@@ -935,31 +936,20 @@ function Footer() {
       
       <div className="border-t border-white/10">
         <div className="container-page flex flex-col items-center gap-4 py-6 text-xs text-white/55">
-
-          {/* Center Content */}
           <div className="flex flex-col items-center gap-3 text-center">
-
-            {/* DEVANAMPRIYA Name */}
             <p className="font-semibold text-white/70">
               DEVANAMPRIYA
             </p>
-
-            {/* Copyright */}
             <p>
               © {new Date().getFullYear()} DEVANAMPRIYA. All rights reserved.
             </p>
-
-            {/* Crafted by */}
             <p>
               Crafted by{" "}
               <span className="font-semibold text-[var(--gold)]">
                 S Anil Kumar
               </span>
             </p>
-
-            {/* Social Icons */}
             <div className="flex items-center gap-3">
-              {/* WhatsApp */}
               <a
                 href="https://wa.me/918123193971"
                 target="_blank"
@@ -970,16 +960,12 @@ function Footer() {
                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .157 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.892-5.335 11.892-11.893 0-3.175-1.235-6.159-3.478-8.407"/>
                 </svg>
               </a>
-
-              {/* Call */}
               <a
                 href="tel:+918123193971"
                 className="grid h-8 w-8 place-items-center rounded-full border border-white/15 transition hover:border-[var(--gold)] hover:bg-[var(--gold)] hover:text-[var(--royal-deep)]"
               >
                 <Phone className="h-4 w-4" />
               </a>
-
-              {/* LinkedIn */}
               <a
                 href="https://www.linkedin.com/in/s-anil-kumar-46b71a2b2/"
                 target="_blank"
@@ -991,9 +977,7 @@ function Footer() {
                 </svg>
               </a>
             </div>
-
           </div>
-
         </div>
       </div>
     </footer>
@@ -1049,7 +1033,7 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <ScrollProgress />
       <Navbar />
-      <main className="pt-0">
+      <main className="pt-0" style={{ flex: 1, width: "100%" }}>
         <Outlet />
       </main>
       <Footer />
