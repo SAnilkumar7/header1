@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://devanampriya.com/sitemap.xml
